@@ -139,16 +139,16 @@ li:hover {
 
     #main {
         position: absolute;
-        left: 20%;
+        left: 10%;
     }
 
     a {
-        margin-left: 20%;
+        margin-left: 10%;
     }
 
     #back {
         position: relative;
-        left: 55%;
+        left: 40%;
     }
 
     #clear {
