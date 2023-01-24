@@ -62,7 +62,7 @@ timer.addEventListener("click", function () {
             secondsLeft--;
             currentTime.textContent = "Time: " + secondsLeft;
 
-            if (secondsLeft == 0) {
+            if (secondsLeft <= 0) {
                 clearInterval(interval);
                 finished();
                 currentTime.textContent = "Time's up!"
@@ -100,7 +100,7 @@ function compare(event) {
         createDiv.setAttribute("id", "createDiv");
         if (element.textContent == questions[questionNum].answer) {
             score++;
-            createDiv.textContent = "Correct! The answer is:  " + questions[questionNum].answer;
+            createDiv.textContent = "Correct!";
         } else {
             secondsLeft = secondsLeft - penalty;
             createDiv.textContent = "Incorrect"
