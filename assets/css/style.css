@@ -131,3 +131,28 @@ li:hover {
         right: 5%;
     }
 }
+
+@media screen and (max-width: 480px) {
+    body {
+        max-width: 480px;
+    }
+
+    #main {
+        position: absolute;
+        left: 20%;
+    }
+
+    a {
+        margin-left: 20%;
+    }
+
+    #back {
+        position: relative;
+        left: 55%;
+    }
+
+    #clear {
+        position: relative;
+        right: 5%;
+    }
+}
