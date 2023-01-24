@@ -17,10 +17,10 @@ if (allScores !== null) {
 //Goes back to main page
 back.addEventListener("click", function () {
     window.location.replace("./index.html");
-});
+})
 
 //Clears scores
 clearScores.addEventListener("click", function () {
     localStorage.clear();
     location.reload();
-});
+})

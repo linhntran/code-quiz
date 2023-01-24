@@ -49,7 +49,7 @@ var questionNum = 0;
 var currentTime = document.querySelector("#currentTime");
 var timer = document.querySelector("#start");
 var questionsSection = document.querySelector("#questionsSection");
-var wrapper = document.querySelector("#wrapper");
+var main = document.querySelector("#main");
 
 var secondsLeft = 75;
 var interval = 0;
@@ -67,12 +67,13 @@ timer.addEventListener("click", function () {
                 finished();
                 currentTime.textContent = "Time's up!"
             }
-        }, 1000);
+        }, 1000)
     }
-    render(questionNum);
-});
+    run(questionNum);
+})
 
-function render(questionNum) {
+//Runs the quiz
+function run(questionNum) {
     questionsSection.innerHTML = "";
     answers.innerHTML = "";
 
@@ -96,28 +97,30 @@ function compare(event) {
     var element = event.target;
 
     if (element.matches("li")) {
-        var createDiv = document.createElement("div");
-        createDiv.setAttribute("id", "createDiv");
+        var check = document.createElement("div");
+        check.setAttribute("id", "check");
         if (element.textContent == questions[questionNum].answer) {
             score++;
-            createDiv.textContent = "Correct!";
+            check.textContent = "Correct!";
         } else {
             secondsLeft = secondsLeft - penalty;
-            createDiv.textContent = "Incorrect"
+            check.textContent = "Wrong!"
         }
     }
 
     questionNum++;
 
+    //Checks how many questions are left and will continue running until completed
     if (questionNum >= questions.length) {
         finished();
-        createDiv.textContent = "End of quiz!" + " " + "You got  " + score + "/" + questions.length + " Correct!";
+        check.textContent = "End of quiz!";
     } else {
-        render(questionNum);
+        run(questionNum);
     }
-    questionsSection.appendChild(createDiv);
+    questionsSection.appendChild(check);
 }
 
+//Runs when quiz is completed
 function finished() {
     questionsSection.innerHTML = "";
     currentTime.innerHTML = "";
@@ -143,54 +146,49 @@ function finished() {
         questionsSection.appendChild(createP2);
     }
 
-    //
-    var createLabel = document.createElement("label");
-    createLabel.setAttribute("id", "createLabel");
-    createLabel.textContent = "Enter your initials: ";
+    //Creates line to ask for initials
+    var prompt = document.createElement("label");
+    prompt.setAttribute("id", "prompt");
+    prompt.textContent = "Enter your initials: ";
 
-    questionsSection.appendChild(createLabel);
+    questionsSection.appendChild(prompt);
 
-    //
-    var createInput = document.createElement("input");
-    createInput.setAttribute("type", "text");
-    createInput.setAttribute("id", "initials");
-    createInput.textContent = "";
+    //Creates input box for initials
+    var userInput = document.createElement("input");
+    userInput.setAttribute("type", "text");
+    userInput.setAttribute("id", "initials");
+    userInput.textContent = "";
 
-    questionsSection.appendChild(createInput);
+    questionsSection.appendChild(userInput);
 
-    //
-    var createSubmit = document.createElement("button");
-    createSubmit.setAttribute("type", "submit");
-    createSubmit.setAttribute("id", "Submit");
-    createSubmit.textContent = "Submit";
+    //Creates submit button
+    var submitButton = document.createElement("button");
+    submitButton.setAttribute("type", "submitButton");
+    submitButton.setAttribute("id", "Submit");
+    submitButton.textContent = "Submit";
 
-    questionsSection.appendChild(createSubmit);
+    questionsSection.appendChild(submitButton);
 
-    //
-    createSubmit.addEventListener("click", function () {
-        var initials = createInput.value;
+    //Once "Submit" is clicked, pulls high scores stored in local storge and logs new score
+    submitButton.addEventListener("click", function () {
+        var initials = userInput.value;
 
-        if (initials === null) {
-
-            console.log("Please enter your initials.");
-
-        } else {
-            var finalScore = {
-                initials: initials,
-                score: timeRemaining
-            }
-            console.log(finalScore);
-            var allScores = localStorage.getItem("allScores");
-            if (allScores === null) {
-                allScores = [];
-            } else {
-                allScores = JSON.parse(allScores);
-            } 
-            allScores.push(finalScore);
-            var newScore = JSON.stringify(allScores);
-            localStorage.setItem("allScores", newScore);
-
-            window.location.replace("./highScore.html");
+        var finalScore = {
+            initials: initials,
+            score: timeRemaining
         }
-    });
+
+        console.log(finalScore);
+        var allScores = localStorage.getItem("allScores");
+        if (allScores === null) {
+            allScores = [];
+        } else {
+            allScores = JSON.parse(allScores);
+        }
+        allScores.push(finalScore);
+        var newScore = JSON.stringify(allScores);
+        localStorage.setItem("allScores", newScore);
+
+        window.location.replace("./highScore.html");
+    })
 }
