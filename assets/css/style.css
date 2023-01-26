@@ -85,8 +85,8 @@ li:hover {
 
     #main {
         top: 10%;
-        width: 300px;
-        height: 300px;
+        width: 400px;
+        height: 400px;
     }
 
     #back, #clearScore {
@@ -109,19 +109,20 @@ li:hover {
 
     #main {
         top: 10%;
-        width: 200px;
-        height: 200px;
+        left: 10%;
+        width: 300px;
+        height: 300px;
     }
 
     #back, #clearScore {
         padding: 10%;
-        font-size: 10px;
+        font-size: 5px;
         width: 25%;
     }
 
     #submit {
         padding: 10%;
-        font-size: 10px;
+        font-size: 5px;
         width: 10%;
     }
 }
