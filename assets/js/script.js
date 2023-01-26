@@ -137,20 +137,21 @@ function finished() {
     questionsSection.appendChild(createP);
 
     //Timer
-    if (secondsLeft >= 0) {
+    if (secondsLeft > 0) {
         var timeRemaining = secondsLeft;
         var createP2 = document.createElement("p");
         clearInterval(interval);
         createP.textContent = "Your final score is: " + timeRemaining;
-
         questionsSection.appendChild(createP2);
+    }   else {
+        createP.textContent = "Your time has run out. Your final score is 0.";
+        timeRemaining = 0;
     }
 
     //Creates line to ask for initials
     var prompt = document.createElement("label");
     prompt.setAttribute("id", "prompt");
     prompt.textContent = "Enter your initials: ";
-
     questionsSection.appendChild(prompt);
 
     //Creates input box for initials
@@ -158,7 +159,6 @@ function finished() {
     userInput.setAttribute("type", "text");
     userInput.setAttribute("id", "initials");
     userInput.textContent = "";
-
     questionsSection.appendChild(userInput);
 
     //Creates submit button
@@ -166,7 +166,6 @@ function finished() {
     submitButton.setAttribute("type", "submitButton");
     submitButton.setAttribute("id", "submit");
     submitButton.textContent = "Submit";
-
     questionsSection.appendChild(submitButton);
 
     //Once "Submit" is clicked, pulls high scores stored in local storge and logs new score
@@ -189,6 +188,6 @@ function finished() {
         var newScore = JSON.stringify(allScores);
         localStorage.setItem("allScores", newScore);
 
-        window.location.replace("./highScore.html");
+        window.location.assign("./highScore.html");
     })
 }

@@ -23,6 +23,7 @@ h1 {
     padding: 15px 30px;
     font-size: 20px;
     color: white;
+    border-radius: 8px;
 }
 
 #questionsSection {
@@ -42,6 +43,7 @@ h1 {
     top: 30%;
     left: 55%;
     width: auto;
+    border-radius: 8px;
 }
 
 #submit {
@@ -51,6 +53,7 @@ h1 {
     font-size: 20px;
     color: white;
     width: auto;
+    border-radius: 8px;
 }
 
 label {
