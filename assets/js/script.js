@@ -164,7 +164,7 @@ function finished() {
     //Creates submit button
     var submitButton = document.createElement("button");
     submitButton.setAttribute("type", "submitButton");
-    submitButton.setAttribute("id", "Submit");
+    submitButton.setAttribute("id", "submit");
     submitButton.textContent = "Submit";
 
     questionsSection.appendChild(submitButton);

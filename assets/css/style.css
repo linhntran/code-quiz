@@ -11,7 +11,13 @@
     height: 700px;
 }
 
+h1 {
+    /* position: relative; */
+    text-align: center;
+}
+
 #start {
+    position: relative;
     background-color: #fe5f55;
     margin-left: 35%;
     padding: 15px 30px;
@@ -27,14 +33,6 @@
     float: right;
 }
 
-button {
-    border-radius: 8px;
-}
-
-button:hover {
-    cursor: grab;
-}
-
 #back {
     background-color: #fe5f55;
     position: relative;
@@ -45,7 +43,6 @@ button:hover {
     left: 55%;
     width: auto;
     text-align: center;
-    /* text-decoration: none; */
 }
 
 #clearScore {
@@ -59,12 +56,7 @@ button:hover {
     text-align: center;
 }
 
-textarea {
-    width: 90%;
-    margin: 20px;
-}
-
-#Submit {
+#submit {
     background-color: #fe5f55;
     margin-left: 33%;
     padding: 15px 32px;
@@ -82,11 +74,6 @@ input {
     border: 1px solid #eef5db;
 }
 
-h1 {
-    position: relative;
-    text-align: center;
-}
-
 li {
     list-style-type: none;
     background-color: #fe5f55;
@@ -102,19 +89,14 @@ li:hover {
     background-color: #c7efcf;
 }
 
-#check {
-    margin-top: 20px;
-    border-top: 1px solid #eef5db;
-}
-
 @media screen and (max-width: 786px) {
     body {
         max-width: 786px;
     }
 
     #main {
-        position: absolute;
-        left: 20%;
+        width: 300px;
+        height: 300px;
     }
 
     a {
@@ -122,8 +104,7 @@ li:hover {
     }
 
     #back {
-        position: relative;
-        left: 55%;
+        width: auto;
     }
 
     #clear {
@@ -132,14 +113,14 @@ li:hover {
     }
 }
 
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) {
     body {
         max-width: 480px;
     }
 
     #main {
-        position: absolute;
-        left: 10%;
+        width: 200px;
+        height: 200px;
     }
 
     a {
@@ -147,12 +128,10 @@ li:hover {
     }
 
     #back {
-        position: relative;
-        left: 40%;
+        width: 25%;
     }
 
     #clear {
-        position: relative;
-        right: 5%;
+        width: 25%;
     }
-}
+} */
