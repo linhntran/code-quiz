@@ -90,13 +90,13 @@ li:hover {
     }
 
     #back, #clearScore {
-        padding: 25%;
+        padding: 5px 5px;
         font-size: 12px;
         width: 25%;
     }
 
     #submit {
-        padding: 25%;
+        padding: 10px 20px;
         font-size: 15px;
         width: 25%;
     }
@@ -115,14 +115,14 @@ li:hover {
     }
 
     #back, #clearScore {
-        padding: 10%;
+        padding: 2px 2px;
         font-size: 5px;
         width: 25%;
     }
 
-    #submit {
+    /* #submit {
         padding: 10%;
         font-size: 5px;
         width: 10%;
-    }
+    } */
 }
