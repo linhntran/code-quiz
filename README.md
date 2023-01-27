@@ -11,3 +11,7 @@ See below for the direct link to the live page:
 The following image demonstrates what the web application looks like once the user navigates to the live page and proceeds with the quiz. 
 
 ![A preview of homepage.](./assets/images/quiz-preview.gif)
+
+## Credits
+
+Some of the quiz questions were provided by [W3 Schools](https://w3schools.com/)
